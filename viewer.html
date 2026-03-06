@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viewer | Jacob Appling</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Jacob Appling</a>
+
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="weekly-summaries.html" class="active">Weekly Summaries</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="book-review.html">Book Review</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <h1 id="viewer-title">Viewer</h1>
+        <p id="viewer-subtitle">Loading content…</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card viewer-card">
+          <!-- PDF Viewer -->
+          <iframe id="pdf-frame" class="viewer-frame" title="PDF Viewer" loading="lazy"></iframe>
+
+          <!-- Video Viewer -->
+          <video id="video-player" class="viewer-video" controls preload="metadata">
+            <source id="video-source" src="" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="viewer-actions">
+            <a href="weekly-summaries.html" class="btn btn-secondary">← Back to Weekly Summaries</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Jacob Appling. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Read query params like: viewer.html?type=pdf&title=Week%202%20Summary&src=files/Week2_DOC.pdf
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+    const title = params.get("title") || "Viewer";
+    const src = params.get("src");
+
+    const viewerTitle = document.getElementById("viewer-title");
+    const viewerSubtitle = document.getElementById("viewer-subtitle");
+
+    const pdfFrame = document.getElementById("pdf-frame");
+    const videoPlayer = document.getElementById("video-player");
+    const videoSource = document.getElementById("video-source");
+
+    viewerTitle.textContent = title;
+
+    // Hide both first
+    pdfFrame.style.display = "none";
+    videoPlayer.style.display = "none";
+
+    if (!src) {
+      viewerSubtitle.textContent = "No file was provided.";
+    } else if (type === "pdf") {
+      viewerSubtitle.textContent = "Viewing embedded PDF.";
+      pdfFrame.src = src;
+      pdfFrame.style.display = "block";
+    } else if (type === "video") {
+      viewerSubtitle.textContent = "Viewing embedded video.";
+      videoSource.src = src;
+      videoPlayer.load();
+      videoPlayer.style.display = "block";
+    } else {
+      viewerSubtitle.textContent = "Unknown content type.";
+    }
+  </script>
+</body>
+</html>
