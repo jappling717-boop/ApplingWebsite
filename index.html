@@ -5,8 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jacob Appling | Portfolio Home</title>
+
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav-container">
@@ -22,26 +29,32 @@
         </ul>
       </nav>
 
-      <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu">
-        ☰
-      </button>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu">☰</button>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-content">
-        <p class="hero-tag">AI in Construction Management Portfolio</p>
-        <h1>Welcome to My Website Portfolio</h1>
-        <p class="hero-text">
-          This website highlights my coursework, weekly AI article summaries,
-          semester projects, book review, and professional interests related to
-          construction management, facilities, and emerging technology.
-        </p>
+      <div class="container hero-layout">
+        <!-- LEFT: photo -->
+        <div class="hero-photo">
+          <img src="images/headshot.jpg" alt="Jacob Appling headshot" />
+        </div>
 
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn btn-primary">View Projects</a>
-          <a href="weekly-summaries.html" class="btn btn-secondary">Read Summaries</a>
+        <!-- RIGHT: text -->
+        <div class="hero-content">
+          <p class="hero-tag">AI in Construction Management Portfolio</p>
+          <h1>Welcome to My Website Portfolio</h1>
+          <p class="hero-text">
+            This website highlights my coursework, weekly AI article summaries,
+            semester projects, book review, and professional interests related to
+            construction management, facilities, and emerging technology.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="projects.html" class="btn btn-primary">View Projects</a>
+            <a href="weekly-summaries.html" class="btn btn-secondary">Read Summaries</a>
+          </div>
         </div>
       </div>
     </section>
@@ -81,8 +94,8 @@
           <article class="card">
             <h3>Weekly AI Article Summaries</h3>
             <p>
-              Read my weekly article reviews, presentation links, and interactive
-              AI elements related to course topics.
+              Read my weekly article reviews, presentation links, and interactive AI
+              elements related to course topics.
             </p>
             <a href="weekly-summaries.html" class="text-link">Go to Weekly Summaries</a>
           </article>
