@@ -411,4 +411,20 @@ img {
   .hero h1, .page-banner h1 { font-size: 2rem; }
 
   .section { padding: 55px 0; }
+   /* Use the main title font for headings and navigation tabs across the whole site */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav-logo,
+.nav-links a,
+.navbar a,
+.page-title,
+.section-title,
+.card-title,
+.btn {
+  font-family: "Fraunces", serif !important;
+}
 }
