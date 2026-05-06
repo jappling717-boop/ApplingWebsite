@@ -576,4 +576,93 @@ h6,
   .literature-review-page p {
     font-size: 0.95rem;
   }
+}/* =====================================================
+   UNIFORM NAVIGATION TAB SIZE + POSITION FIX
+===================================================== */
+
+.site-header {
+  width: 100%;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Keeps "Jacob Appling" from causing the tabs to shift */
+.logo {
+  min-width: 220px;
+  font-size: 1.25rem;
+  font-family: "Fraunces", serif !important;
+  font-weight: 800;
+}
+
+/* Keeps the nav tabs centered and consistent */
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Makes each tab larger and more uniform */
+.nav-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 115px;
+  height: 44px;
+  padding: 0 0.8rem;
+  font-family: "Fraunces", serif !important;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Prevents the active page from changing the size/position */
+.nav-links a.active {
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+/* Optional hover/active look */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #94ECBE;
+  background-color: rgba(148, 236, 190, 0.08);
+}
+
+/* Mobile adjustment */
+@media (max-width: 800px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    min-width: auto;
+  }
+
+  .nav-links a {
+    min-width: auto;
+    height: auto;
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+  }
 }

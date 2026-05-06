@@ -411,4 +411,104 @@ img {
   .hero h1, .page-banner h1 { font-size: 2rem; }
 
   .section { padding: 55px 0; }
+}/* =====================================================
+   GLOBAL FONT FIX FOR HEADINGS + NAVIGATION TABS
+===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo,
+.navbar a,
+.nav-links a,
+.page-banner h1,
+.hero h1,
+.card h2,
+.card h3,
+.section-title,
+.page-title,
+.btn {
+  font-family: "Fraunces", serif !important;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* Make nav tabs feel more like the title font */
+.nav-links a {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+/* Keep regular paragraph text clean and readable */
+p,
+li {
+  font-family: "Inter", Arial, sans-serif;
+}/* =====================================================
+   HERO BUTTON READABILITY FIX
+===================================================== */
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #1E3F20 !important;
+  border: 2px solid #94ECBE;
+  font-weight: 800;
+}
+
+.btn-secondary:hover {
+  background-color: #94ECBE;
+  color: #1A1F16 !important;
+  border-color: #94ECBE;
+}/* =====================================================
+   GLOBAL FONT FIX FOR HEADINGS + NAVIGATION TABS
+===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo,
+.navbar a,
+.nav-links a,
+.page-banner h1,
+.hero h1,
+.card h2,
+.card h3,
+.section-title,
+.page-title,
+.btn {
+  font-family: "Fraunces", serif !important;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+p,
+li {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* =====================================================
+   HERO BUTTON READABILITY FIX
+===================================================== */
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #1E3F20 !important;
+  border: 2px solid #94ECBE;
+  font-weight: 800;
+}
+
+.btn-secondary:hover {
+  background-color: #94ECBE;
+  color: #1A1F16 !important;
+  border-color: #94ECBE;
 }
