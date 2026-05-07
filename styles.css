@@ -1,3 +1,8 @@
+/* =====================================================
+   JACOB APPLING PORTFOLIO - CLEAN GLOBAL STYLES
+   Replace the entire styles.css file with this.
+===================================================== */
+
 /* =========================
    Theme + Variables
 ========================= */
@@ -14,6 +19,11 @@
   --color-border: #d9e2d3;
 
   --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 14px 34px rgba(26, 31, 22, 0.12);
+
+  --header-height: 92px;
+  --mobile-header-height: 58px;
+  --banner-height: 230px;
 }
 
 /* =========================
@@ -25,17 +35,36 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: "Inter", Arial, Helvetica, sans-serif; /* body font */
-  background-color: var(--color-light);
-  color: var(--color-text);
-  line-height: 1.6;
+html {
+  scroll-behavior: smooth;
+  min-height: 100%;
 }
 
-h1, h2, h3, .logo {
-  font-family: "Fraunces", serif; /* heading font */
+body {
+  min-height: 100vh;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
+  background-image:
+    linear-gradient(rgba(245, 247, 242, 0.18), rgba(245, 247, 242, 0.18)),
+    url("images/site-background.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo,
+.nav-links a,
+.navbar a,
+.btn {
+  font-family: "Fraunces", serif !important;
   letter-spacing: 0.2px;
 }
 
@@ -44,61 +73,146 @@ img {
   display: block;
 }
 
+a {
+  color: inherit;
+}
+
 .container {
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-.section { padding: 70px 0; }
+main,
+.section,
+.alt-section,
+.digest-showcase-section,
+.literature-review-page,
+.review-showcase {
+  background: transparent !important;
+}
 
-.alt-section { background-color: #edf4ed; }
+.section {
+  padding: 70px 0;
+}
 
-.two-spacer { margin-top: 24px; }
+.two-spacer {
+  margin-top: 24px;
+}
 
-/* =========================
-   Header / Nav
-========================= */
+/* =====================================================
+   GLOBAL HEADER / NAVIGATION
+===================================================== */
 .site-header {
-  background-color: var(--color-primary);
+  height: var(--header-height);
+  min-height: var(--header-height);
+  max-height: var(--header-height);
+  background-color: rgba(30, 63, 32, 0.96);
   color: var(--color-white);
   position: sticky;
   top: 0;
   z-index: 1000;
+  overflow: visible;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .nav-container {
+  width: 94%;
+  max-width: 1500px;
+  height: var(--header-height);
+  min-height: var(--header-height);
+  max-height: var(--header-height);
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 18px 0;
+  justify-content: space-between;
   position: relative;
 }
 
+/* =========================
+   Curved Header Text
+========================= */
+.journey-arch {
+  position: absolute;
+  left: -90px;
+  top: -45px;
+  width: 420px;
+  height: 180px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.journey-arch svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.journey-arch text {
+  font-family: "Fraunces", serif;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  fill: var(--color-accent);
+}
+
+/* =========================
+   Logo + Nav Tabs
+========================= */
 .logo {
-  font-size: 1.4rem;
+  position: relative;
+  z-index: 3;
+  margin-left: 290px;
+  min-width: 210px;
+  font-size: 1.3rem;
+  line-height: 1;
   color: var(--color-white);
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav-links {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  gap: 20px;
 }
 
 .nav-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  height: 44px;
+  padding: 0 0.85rem;
   color: var(--color-white);
   text-decoration: none;
-  font-weight: 700;
-  transition: 0.3s ease;
+  font-size: 1.08rem;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--color-accent);
+  background-color: rgba(148, 236, 190, 0.12);
 }
 
 .menu-toggle {
@@ -110,33 +224,84 @@ img {
   cursor: pointer;
 }
 
-/* =========================
-   Hero
-========================= */
-.hero {
-  background: linear-gradient(135deg, var(--color-dark), var(--color-primary));
+/* =====================================================
+   GLOBAL PAGE BANNER
+===================================================== */
+.page-banner {
+  height: var(--banner-height);
+  min-height: var(--banner-height);
+  padding: 0;
+  margin: 0;
+  background: rgba(18, 38, 20, 0.88) !important;
   color: var(--color-white);
-  padding: 100px 0;
-}
-
-/* Layout: photo left, text right */
-.hero-layout {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 28px;
+  display: flex;
   align-items: center;
 }
 
-.hero-photo img {
-  width: 220px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 999px;      /* oval */
-  border: 4px solid var(--color-accent);
-  box-shadow: var(--shadow);
+.page-banner .container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.hero-content { max-width: 750px; }
+.page-banner h1 {
+  font-size: 2.45rem;
+  line-height: 1.15;
+  margin: 0 0 0.85rem 0;
+  color: var(--color-white);
+}
+
+.page-banner p {
+  max-width: 780px;
+  margin: 0;
+  color: var(--color-white);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+/* =====================================================
+   HOMEPAGE HERO
+===================================================== */
+.hero {
+  background: rgba(18, 38, 20, 0.88) !important;
+  color: var(--color-white);
+  padding: 100px 0;
+  margin-top: 0;
+}
+
+.hero .container,
+.hero-layout {
+  max-width: 1450px !important;
+}
+
+.hero-layout {
+  display: grid !important;
+  grid-template-columns: minmax(360px, 520px) minmax(520px, 1fr) !important;
+  gap: 4rem !important;
+  align-items: center !important;
+}
+
+.hero-photo {
+  width: 100% !important;
+  max-width: 520px !important;
+}
+
+.hero-photo img {
+  width: 100% !important;
+  max-width: 520px !important;
+  height: 620px !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 28px !important;
+  border: 4px solid var(--color-accent);
+  box-shadow: 0 18px 45px rgba(26, 31, 22, 0.22) !important;
+}
+
+.hero-content {
+  max-width: 850px;
+}
 
 .hero-tag {
   display: inline-block;
@@ -154,43 +319,81 @@ img {
   margin-bottom: 18px;
 }
 
-.hero-text {
-  font-size: 1.1rem;
-  margin-bottom: 26px;
+.hero-intro-card {
+  max-width: 850px !important;
+  background: rgba(248, 255, 248, 0.93) !important;
+  border: 1px solid rgba(30, 63, 32, 0.18) !important;
+  border-left: 8px solid var(--color-accent) !important;
+  border-radius: 22px !important;
+  padding: 2rem 2.25rem !important;
+  margin-top: 1.1rem !important;
+  box-shadow: var(--shadow-strong) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-/* =========================
-   Page Banner (internal pages)
-========================= */
-.page-banner {
-  background: linear-gradient(135deg, var(--color-dark), var(--color-secondary));
-  color: var(--color-white);
-  padding: 80px 0;
+.hero-intro-card p {
+  font-size: 1.3rem !important;
+  line-height: 1.85 !important;
+  color: var(--color-primary) !important;
+  font-weight: 700 !important;
 }
 
-.page-banner h1 {
-  font-size: 2.4rem;
-  margin-bottom: 12px;
+.hero-main-welcome {
+  font-family: "Fraunces", serif !important;
+  font-size: 2.35rem !important;
+  line-height: 1.25 !important;
+  font-weight: 900 !important;
+  color: var(--color-primary) !important;
+  margin-bottom: 1.25rem !important;
 }
 
-.page-banner p { max-width: 750px; }
-
-/* =========================
-   Section Heading
-========================= */
-.section-heading { margin-bottom: 30px; }
-
-.section-heading h2 {
-  font-size: 2rem;
-  color: var(--color-primary);
-  margin-bottom: 10px;
+.hero-sub-intro {
+  font-family: "Fraunces", serif !important;
+  font-size: 1.45rem !important;
+  line-height: 1.4 !important;
+  font-weight: 900 !important;
+  color: var(--color-secondary) !important;
+  margin-bottom: 0.75rem !important;
 }
 
-.section-heading p { color: #4a4a4a; }
+.hero-bio-list {
+  padding-left: 1.6rem !important;
+  margin: 1.25rem 0 1.35rem !important;
+}
 
-/* =========================
-   Buttons
-========================= */
+.hero-bio-list li {
+  font-size: 1.22rem !important;
+  line-height: 1.8 !important;
+  margin-bottom: 0.55rem !important;
+  color: var(--color-primary) !important;
+  font-weight: 700 !important;
+}
+
+.hero-bio-list li::marker {
+  color: var(--color-muted) !important;
+  font-size: 1.25em;
+}
+
+.hero-closing {
+  font-size: 1.3rem !important;
+  line-height: 1.8 !important;
+  color: var(--color-primary) !important;
+  font-weight: 800 !important;
+  margin-bottom: 0 !important;
+}
+
+.hero-closing a {
+  color: var(--color-secondary) !important;
+  font-weight: 900 !important;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -206,6 +409,12 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  margin-top: 1.25rem;
+}
+
+.hero-buttons .btn {
+  font-size: 1.08rem !important;
+  padding: 0.95rem 1.35rem !important;
 }
 
 .btn-primary {
@@ -213,7 +422,9 @@ img {
   color: var(--color-dark);
 }
 
-.btn-primary:hover { background-color: #7ed8aa; }
+.btn-primary:hover {
+  background-color: #7ed8aa;
+}
 
 .btn-secondary {
   background-color: transparent;
@@ -236,9 +447,23 @@ img {
   color: var(--color-dark);
 }
 
-/* =========================
-   Cards / Grid
-========================= */
+/* =====================================================
+   CARDS + GENERAL PAGE CONTENT
+===================================================== */
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.section-heading p {
+  color: #4a4a4a;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -246,20 +471,25 @@ img {
 }
 
 .card {
-  background-color: var(--color-white);
+  background: rgba(255, 255, 255, 0.88) !important;
   border: 1px solid var(--color-border);
   border-left: 6px solid var(--color-muted);
   border-radius: 14px;
   padding: 24px;
   box-shadow: var(--shadow);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-.card h2, .card h3 {
+.card h2,
+.card h3 {
   color: var(--color-primary);
   margin-bottom: 12px;
 }
 
-.card p { margin-bottom: 12px; }
+.card p {
+  margin-bottom: 12px;
+}
 
 .text-link {
   color: var(--color-secondary);
@@ -272,67 +502,26 @@ img {
   text-decoration: underline;
 }
 
-/* =========================
-   Interactive Prompt Builder
-========================= */
-.interactive-card { max-width: 100%; }
-
-.prompt-output {
-  margin-top: 18px;
-  padding: 14px;
-  background-color: #eef8f1;
-  border-left: 5px solid var(--color-secondary);
-  border-radius: 8px;
+.styled-list {
+  padding-left: 20px;
 }
 
-/* =========================
-   CTA Section
-========================= */
-.cta-section {
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-  padding: 70px 0;
+.styled-list li {
+  margin-bottom: 10px;
 }
 
-.cta-content {
-  text-align: center;
-  max-width: 800px;
-}
-
-.cta-content h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-.cta-content p { margin-bottom: 25px; }
-
-/* =========================
-   Lists
-========================= */
-.styled-list { padding-left: 20px; }
-.styled-list li { margin-bottom: 10px; }
-
-/* =========================
-   Footer
-========================= */
-.site-footer {
-  background-color: var(--color-dark);
-  color: var(--color-white);
-  text-align: center;
-  padding: 25px 0;
-  margin-top: 20px;
-}
-
-/* =========================
-   Weekly Summaries: Deliverables
-========================= */
+/* =====================================================
+   WEEKLY DIGESTS / VIEWER SUPPORT
+===================================================== */
 .deliverables {
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid var(--color-border);
 }
 
-.deliverables-title { margin-bottom: 6px; }
+.deliverables-title {
+  margin-bottom: 6px;
+}
 
 .deliverables-list {
   list-style: none;
@@ -341,10 +530,9 @@ img {
   gap: 8px;
 }
 
-/* =========================
-   Viewer Page
-========================= */
-.viewer-card { padding: 18px; }
+.viewer-card {
+  padding: 18px;
+}
 
 .viewer-frame {
   width: 100%;
@@ -361,139 +549,25 @@ img {
   border-radius: 10px;
 }
 
-.viewer-actions { margin-top: 14px; }
-
-/* =========================
-   Responsive
-========================= */
-@media (max-width: 900px) {
-  .card-grid { grid-template-columns: 1fr 1fr; }
-
-  .hero h1 { font-size: 2.3rem; }
-
-  .page-banner h1 { font-size: 2rem; }
+.viewer-actions {
+  margin-top: 14px;
 }
 
-@media (max-width: 800px) {
-  .hero-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-photo img {
-    width: 180px;
-    height: 210px;
-    margin-bottom: 10px;
-  }
+.interactive-card {
+  max-width: 100%;
 }
 
-@media (max-width: 700px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: var(--color-primary);
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 230px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-  }
-
-  .nav-links.show { display: flex; }
-
-  .menu-toggle { display: block; }
-
-  .card-grid { grid-template-columns: 1fr; }
-
-  .hero, .page-banner { padding: 70px 0; }
-
-  .hero h1, .page-banner h1 { font-size: 2rem; }
-
-  .section { padding: 55px 0; }
-   /* Use the main title font for headings and navigation tabs across the whole site */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.nav-logo,
-.nav-links a,
-.navbar a,
-.page-title,
-.section-title,
-.card-title,
-.btn {
-  font-family: "Fraunces", serif !important;
-}
-}
-.source-list {
-  margin-top: 1.5rem;
+.prompt-output {
+  margin-top: 18px;
+  padding: 14px;
+  background-color: #eef8f1;
+  border-left: 5px solid var(--color-secondary);
+  border-radius: 8px;
 }
 
-.source-item {
-  margin-top: 1.25rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(30, 63, 32, 0.18);
-}
-
-.source-item h3 {
-  margin-bottom: 0.5rem;
-  color: var(--primary);
-  font-family: "Fraunces", serif;
-}
-
-.source-item p {
-  margin-bottom: 0.75rem;
-}
-/* Literature Review Page - readability upgrade */
-
-.literature-review-page {
-  background: #f5f7f2;
-  padding: 4rem 1.5rem;
-}
-
-.literature-review-page .container {
-  max-width: 1050px;
-  margin: 0 auto;
-}
-
-/* Main reviewed literature intro card */
-.literature-review-page .card {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 2rem;
-  margin-bottom: 1.75rem;
-  border: 1px solid rgba(30, 63, 32, 0.14);
-  border-left: 6px solid var(--primary);
-  box-shadow: 0 12px 30px rgba(26, 31, 22, 0.08);
-}
-
-/* Headings */
-.literature-review-page h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
-  line-height: 1.2;
-}
-
-.literature-review-page h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  color: var(--primary);
-  line-height: 1.35;
-}
-
-/* Paragraph spacing */
-.literature-review-page p {
-  font-size: 1rem;
-  line-height: 1.75;
-  margin-bottom: 1rem;
-  max-width: 900px;
-}
-
-/* Makes the source articles look like individual readable cards */
+/* =====================================================
+   LITERATURE REVIEW SUPPORT
+===================================================== */
 .source-list {
   display: grid;
   gap: 1.25rem;
@@ -501,11 +575,13 @@ h6,
 }
 
 .source-item {
-  background: #f8fbf6;
+  background: rgba(248, 251, 246, 0.9) !important;
   border: 1px solid rgba(30, 63, 32, 0.14);
   border-radius: 16px;
   padding: 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .source-item:hover {
@@ -516,19 +592,58 @@ h6,
 .source-item h3 {
   margin-bottom: 0.75rem;
   font-size: 1.2rem;
+  color: var(--color-primary);
 }
 
 .source-item p {
   margin-bottom: 0.85rem;
 }
 
-/* Author line styling */
-.source-item p strong,
-.literature-review-page .card p strong {
-  color: var(--primary);
+.literature-review-page {
+  padding: 4rem 1.5rem;
 }
 
-/* Key takeaways section */
+.literature-review-page .container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.literature-review-page .card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 18px;
+  padding: 2rem;
+  margin-bottom: 1.75rem;
+  border: 1px solid rgba(30, 63, 32, 0.14);
+  border-left: 6px solid var(--color-primary);
+  box-shadow: 0 12px 30px rgba(26, 31, 22, 0.08);
+}
+
+.literature-review-page h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.literature-review-page h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+  line-height: 1.35;
+}
+
+.literature-review-page p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  max-width: 900px;
+}
+
+.source-item p strong,
+.literature-review-page .card p strong {
+  color: var(--color-primary);
+}
+
 .literature-review-page .styled-list {
   padding-left: 1.25rem;
   margin-top: 1rem;
@@ -540,12 +655,6 @@ h6,
   padding-left: 0.25rem;
 }
 
-/* Adds breathing room between big cards */
-.two-spacer {
-  margin-top: 1.75rem;
-}
-
-/* Optional: makes important intro topic stand out */
 .literature-review-page .card > p:first-of-type {
   background: #eef7ec;
   border-radius: 999px;
@@ -555,189 +664,95 @@ h6,
   font-weight: 600;
 }
 
-/* Mobile-friendly */
-@media (max-width: 768px) {
-  .literature-review-page {
-    padding: 2.5rem 1rem;
-  }
-
-  .literature-review-page .card {
-    padding: 1.4rem;
-  }
-
-  .literature-review-page h2 {
-    font-size: 1.6rem;
-  }
-
-  .literature-review-page h3 {
-    font-size: 1.1rem;
-  }
-
-  .literature-review-page p {
-    font-size: 0.95rem;
-  }
-}/* =====================================================
-   UNIFORM NAVIGATION TAB SIZE + POSITION FIX
+/* =====================================================
+   SHARED GLASS CARD OVERRIDES
 ===================================================== */
-
-.site-header {
-  width: 100%;
+.digest-showcase-card,
+.featured-project,
+.secondary-project,
+.deliverable-card,
+.finding-card,
+.future-card,
+.project-hero-card,
+.pdf-project-card,
+.insight-card,
+.mini-project-card,
+.compact-insight-list,
+.project-stat,
+.project-meta-box,
+.review-hero-card,
+.review-stat,
+.takeaway-card,
+.source-showcase-card,
+.reflection-card,
+.contact-card,
+.contact-photo-card {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* =====================================================
+   CTA + FOOTER
+===================================================== */
+.cta-section {
+  background: rgba(30, 63, 32, 0.94) !important;
+  color: var(--color-white);
+  padding: 70px 0;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-/* Keeps "Jacob Appling" from causing the tabs to shift */
-.logo {
-  min-width: 220px;
-  font-size: 1.25rem;
-  font-family: "Fraunces", serif !important;
-  font-weight: 800;
-}
-
-/* Keeps the nav tabs centered and consistent */
-.navbar {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.4rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* Makes each tab larger and more uniform */
-.nav-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 115px;
-  height: 44px;
-  padding: 0 0.8rem;
-  font-family: "Fraunces", serif !important;
-  font-size: 1.08rem;
-  font-weight: 800;
-  line-height: 1;
+.cta-content {
   text-align: center;
-  white-space: nowrap;
-  border-radius: 999px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  max-width: 800px;
 }
 
-/* Prevents the active page from changing the size/position */
-.nav-links a.active {
-  font-size: 1.08rem;
-  font-weight: 800;
+.cta-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
 }
 
-/* Optional hover/active look */
-.nav-links a:hover,
-.nav-links a.active {
-  color: #94ECBE;
-  background-color: rgba(148, 236, 190, 0.08);
+.cta-content p {
+  margin-bottom: 25px;
 }
 
-/* Mobile adjustment */
-@media (max-width: 800px) {
-  .nav-container {
-    padding: 0 1rem;
+.site-footer {
+  background: rgba(30, 63, 32, 0.94) !important;
+  color: var(--color-white);
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 20px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+@media (max-width: 1200px) {
+  .logo {
+    margin-left: 245px;
+    min-width: 180px;
   }
 
-  .logo {
-    min-width: auto;
+  .journey-arch {
+    left: -75px;
+    top: -40px;
+    width: 365px;
+    height: 160px;
+  }
+
+  .journey-arch text {
+    font-size: 24px;
   }
 
   .nav-links a {
-    min-width: auto;
-    height: auto;
-    justify-content: flex-start;
-    padding: 0.75rem 1rem;
+    min-width: 105px;
+    font-size: 0.98rem;
   }
-}/* =====================================================
-   HOMEPAGE HERO SIZE + READABILITY UPGRADE
-===================================================== */
-
-/* Makes the homepage content area wider */
-.hero .container,
-.hero-layout {
-  max-width: 1450px !important;
 }
 
-/* Gives the image and text more room */
-.hero-layout {
-  display: grid !important;
-  grid-template-columns: minmax(360px, 520px) minmax(520px, 1fr) !important;
-  gap: 4rem !important;
-  align-items: center !important;
-}
-
-/* Makes the photo about 2x larger */
-.hero-photo {
-  width: 100% !important;
-  max-width: 520px !important;
-}
-
-.hero-photo img {
-  width: 100% !important;
-  max-width: 520px !important;
-  height: 620px !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  border-radius: 28px !important;
-  display: block !important;
-  box-shadow: 0 18px 45px rgba(26, 31, 22, 0.22) !important;
-}
-
-/* Makes the text box/window larger */
-.hero-intro-card {
-  max-width: 800px !important;
-  padding: 2rem 2.25rem !important;
-  border-radius: 22px !important;
-}
-
-/* Makes the intro text easier to read */
-.hero-intro-card p {
-  font-size: 1.3rem !important;
-  line-height: 1.85 !important;
-}
-
-/* Makes the bullet list larger */
-.hero-bio-list {
-  padding-left: 1.6rem !important;
-  margin: 1.25rem 0 1.35rem !important;
-}
-
-.hero-bio-list li {
-  font-size: 1.22rem !important;
-  line-height: 1.8 !important;
-  margin-bottom: 0.55rem !important;
-}
-
-/* Makes the closing sentence stand out */
-.hero-closing {
-  font-size: 1.3rem !important;
-  line-height: 1.8 !important;
-}
-
-/* Slightly larger hero buttons */
-.hero-buttons .btn {
-  font-size: 1.08rem !important;
-  padding: 0.95rem 1.35rem !important;
-}
-
-/* Keeps it from breaking on smaller screens */
 @media (max-width: 1000px) {
   .hero-layout {
     grid-template-columns: 1fr !important;
@@ -759,92 +774,452 @@ h6,
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .page-banner h1 {
+    font-size: 2rem;
+  }
+
+  .logo {
+    margin-left: 210px;
+    font-size: 1.1rem;
+  }
+
+  .journey-arch {
+    left: -60px;
+    top: -35px;
+    width: 320px;
+    height: 145px;
+  }
+
+  .journey-arch text {
+    font-size: 21px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - PHONE
+===================================================== */
+@media (max-width: 700px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .site-header {
+    height: var(--mobile-header-height) !important;
+    min-height: var(--mobile-header-height) !important;
+    max-height: var(--mobile-header-height) !important;
+    overflow: visible !important;
+  }
+
+  .nav-container {
+    height: var(--mobile-header-height) !important;
+    min-height: var(--mobile-header-height) !important;
+    max-height: var(--mobile-header-height) !important;
+    padding: 0 1rem !important;
+    width: 100% !important;
+  }
+
+  .journey-arch {
+    display: none !important;
+  }
+
+  .logo {
+    margin-left: 0 !important;
+    min-width: auto !important;
+    font-size: 1.15rem !important;
+  }
+
+  .navbar {
+    justify-content: flex-end;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    font-size: 1.6rem !important;
+    line-height: 1;
+    z-index: 10001;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed !important;
+    top: 64px !important;
+    right: 12px !important;
+    width: 205px !important;
+    max-height: 270px !important;
+    overflow-y: auto !important;
+    padding: 8px !important;
+    background-color: rgba(30, 63, 32, 0.98) !important;
+    border: 1px solid rgba(148, 236, 190, 0.25);
+    border-radius: 14px !important;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24) !important;
+    z-index: 10000 !important;
+    gap: 4px !important;
+  }
+
+  .nav-links.show {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .nav-links a {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    justify-content: center !important;
+    padding: 0.55rem 0.65rem !important;
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+    border-radius: 999px !important;
+  }
+
+  .page-banner {
+    height: 175px !important;
+    min-height: 175px !important;
+  }
+
+  .page-banner h1 {
+    font-size: 1.85rem !important;
+  }
+
+  .page-banner p {
+    font-size: 0.95rem !important;
+  }
+
+  .hero {
+    padding: 42px 0 58px !important;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .hero-photo {
+    max-width: 310px !important;
+    margin: 0 auto !important;
+  }
+
   .hero-photo img {
-    height: 420px !important;
+    width: 100% !important;
+    max-width: 310px !important;
+    height: 360px !important;
+    border-radius: 24px !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  .hero-tag {
+    font-size: 0.9rem !important;
+    padding: 7px 12px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero h1 {
+    font-size: 2.05rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 1rem !important;
   }
 
   .hero-intro-card {
-    padding: 1.4rem !important;
+    padding: 1.15rem 1.25rem !important;
+    border-radius: 20px !important;
+  }
+
+  .hero-main-welcome {
+    font-size: 1.28rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hero-sub-intro {
+    font-size: 1.05rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .hero-intro-card p,
   .hero-bio-list li,
   .hero-closing {
-    font-size: 1.05rem !important;
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
   }
-}/* =====================================================
-   HOMEPAGE INTRO TEXT COLOR + WEIGHT UPGRADE
-===================================================== */
 
-.hero-intro-card {
-  background: #f8fff8 !important;
-  border-left: 8px solid #94ECBE !important;
+  .hero-bio-list {
+    padding-left: 1.15rem !important;
+    margin: 0.85rem 0 1rem !important;
+  }
+
+  .hero-bio-list li {
+    margin-bottom: 0.35rem !important;
+  }
+
+  .hero-buttons {
+    gap: 0.75rem !important;
+  }
+
+  .hero-buttons .btn {
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1rem !important;
+    padding: 0.85rem 1rem !important;
+  }
+
+  .section {
+    padding: 50px 0 !important;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
-/* Main intro paragraph */
-.hero-intro-card p {
-  color: #1E3F20 !important;
-  font-weight: 700 !important;
-}
+@media (max-width: 500px) {
+  .logo {
+    font-size: 1.1rem !important;
+  }
 
-/* Bullet list text */
-.hero-bio-list li {
-  color: #1E3F20 !important;
-  font-weight: 700 !important;
-}
+  .hero-photo {
+    max-width: 290px !important;
+  }
 
-/* Bullet points themselves */
-.hero-bio-list li::marker {
-  color: #4A7856 !important;
-  font-size: 1.25em;
-}
+  .hero-photo img {
+    max-width: 290px !important;
+    height: 335px !important;
+  }
 
-/* Closing sentence */
-.hero-closing {
-  color: #1E3F20 !important;
-  font-weight: 800 !important;
-}
+  .hero h1 {
+    font-size: 1.9rem !important;
+  }
 
-/* Contact Page link */
-.hero-closing a {
-  color: #345830 !important;
-  font-weight: 900 !important;
-  text-decoration-thickness: 2px;
-}
-
-/* Optional: make important words feel richer */
-.hero-intro-card strong {
-  color: #1E3F20 !important;
-  font-weight: 900 !important;
-}/* =====================================================
-   HOMEPAGE BIG WELCOME TEXT
-===================================================== */
-
-.hero-main-welcome {
-  font-family: "Fraunces", serif !important;
-  font-size: 2.35rem !important;
-  line-height: 1.25 !important;
-  font-weight: 900 !important;
-  color: #1E3F20 !important;
-  margin-bottom: 1.25rem !important;
-}
-
-.hero-sub-intro {
-  font-family: "Fraunces", serif !important;
-  font-size: 1.45rem !important;
-  line-height: 1.4 !important;
-  font-weight: 900 !important;
-  color: #345830 !important;
-  margin-bottom: 0.75rem !important;
+  .nav-links {
+    width: 195px !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero-main-welcome {
-    font-size: 1.75rem !important;
+  .literature-review-page {
+    padding: 2.5rem 1rem;
   }
 
-  .hero-sub-intro {
-    font-size: 1.25rem !important;
+  .literature-review-page .card {
+    padding: 1.4rem;
+  }
+
+  .literature-review-page h2 {
+    font-size: 1.6rem;
+  }
+
+  .literature-review-page h3 {
+    font-size: 1.1rem;
+  }
+
+  .literature-review-page p {
+    font-size: 0.95rem;
+  }
+}/* =====================================================
+   CONTACT PAGE BANNER POSITION FIX
+   Moves Contact / Connect heading up inside the banner
+===================================================== */
+/* =====================================================
+   FIX BANNER TEXT POSITION
+   Centers Contact / Connect and other banner-inner headings
+===================================================== */
+
+.page-banner .banner-inner {
+  width: 90% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+/* =====================================================
+   INTERACTIVE WATCHER HOMEPAGE SECTION
+===================================================== */
+
+.watcher-section {
+  background: transparent !important;
+  color: #ffffff;
+  padding: 35px 0 45px;
+}
+
+.watcher-container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watcher-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 280px;
+  margin: 0 auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible;
+}
+
+.watcher-face {
+  width: min(38vw, 260px);
+  max-height: 260px;
+  object-fit: contain;
+  display: block;
+  background: transparent !important;
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.35));
+  transition: opacity 0.08s ease, transform 0.12s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+.watcher-caption {
+  margin-top: 0.85rem;
+  color: #94ECBE;
+  font-family: "Fraunces", serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 950px) {
+  .watcher-section {
+    padding: 30px 0 40px;
+  }
+
+  .watcher-stage {
+    min-height: 240px;
+  }
+
+  .watcher-face {
+    width: min(45vw, 220px);
+    max-height: 220px;
+  }
+
+  .watcher-caption {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .watcher-section {
+    padding: 25px 0 35px;
+  }
+
+  .watcher-stage {
+    min-height: 210px;
+  }
+
+  .watcher-face {
+    width: min(55vw, 180px);
+    max-height: 180px;
+  }
+
+  .watcher-caption {
+    font-size: 1.05rem;
+    margin-top: 0.7rem;
+  }
+}/* =====================================================
+   WATCHER GRAPHIC SIZE FIX
+   Makes the floating head about half size
+===================================================== */
+
+.watcher-section {
+  padding: 25px 0 35px !important;
+}
+
+.watcher-stage {
+  min-height: 240px !important;
+}
+
+.watcher-face {
+  width: min(38vw, 240px) !important;
+  max-height: 240px !important;
+}
+
+.watcher-caption {
+  font-size: 1.25rem !important;
+  margin-top: 0.65rem !important;
+}
+
+@media (max-width: 700px) {
+  .watcher-stage {
+    min-height: 190px !important;
+  }
+
+  .watcher-face {
+    width: min(48vw, 165px) !important;
+    max-height: 165px !important;
+  }
+
+  .watcher-caption {
+    font-size: 1rem !important;
+  }
+}/* =====================================================
+   FINAL WATCHER SIZE FIX
+   Forces the interactive head to be smaller
+===================================================== */
+
+#watcher-section {
+  padding: 25px 0 35px !important;
+  background: transparent !important;
+}
+
+#watcher-section .watcher-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+#watcher-stage {
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: auto !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+#watcher-face {
+  width: 100px !important;
+  max-width: 100px !important;
+  height: auto !important;
+  max-height: 100px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+#watcher-stage .watcher-caption {
+  margin-top: 0.65rem !important;
+  font-size: 1.25rem !important;
+  text-align: center !important;
+}
+
+/* Phone size */
+@media (max-width: 700px) {
+  #watcher-face {
+    width: 165px !important;
+    max-width: 165px !important;
+    max-height: 165px !important;
+  }
+
+  #watcher-stage .watcher-caption {
+    font-size: 1rem !important;
   }
 }

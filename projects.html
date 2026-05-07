@@ -13,13 +13,462 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================================================
+       PROJECTS PAGE - FINAL PROJECT FEATURED DESIGN
+    ===================================================== */
+
+    .featured-project {
+      background: rgba(255, 255, 255, 0.93);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-left: 8px solid #94ECBE;
+      border-radius: 24px;
+      padding: 2.25rem;
+      box-shadow: 0 16px 38px rgba(26, 31, 22, 0.1);
+      margin-bottom: 2.5rem;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .project-kicker {
+      display: inline-flex;
+      width: fit-content;
+      background: #94ECBE;
+      color: #1A1F16;
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 0.45rem 1rem;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .featured-project h2 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 2.45rem;
+      line-height: 1.15;
+      margin-bottom: 0.9rem;
+    }
+
+    .featured-project p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .featured-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .project-action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.4rem;
+    }
+
+    .project-action-row a {
+      flex: 1 1 170px;
+      text-align: center;
+      text-decoration: none;
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      color: #1E3F20;
+      background: #eef7ec;
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .project-action-row a:hover {
+      background: #94ECBE;
+      color: #1A1F16;
+      transform: translateY(-2px);
+    }
+
+    .project-video-card {
+      background: #0f1f12;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(30, 63, 32, 0.2);
+      box-shadow: 0 14px 34px rgba(26, 31, 22, 0.18);
+    }
+
+    .project-video-card video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #0f1f12;
+    }
+
+    .video-caption {
+      background: #1E3F20;
+      color: #ffffff;
+      padding: 0.85rem 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .project-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .project-stat {
+      background: #eef7ec;
+      border: 1px solid rgba(30, 63, 32, 0.14);
+      border-radius: 16px;
+      padding: 1rem;
+    }
+
+    .project-stat h4 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .project-stat p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .section-divider-heading {
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .section-divider-heading h2 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 2rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .section-divider-heading p {
+      max-width: 900px;
+      line-height: 1.7;
+    }
+
+    .findings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .finding-card {
+      background: rgba(255, 255, 255, 0.93);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-radius: 18px;
+      padding: 1.4rem;
+      box-shadow: 0 10px 26px rgba(26, 31, 22, 0.07);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .finding-number {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      background: #94ECBE;
+      color: #1A1F16;
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      border-radius: 50%;
+      margin-bottom: 0.8rem;
+    }
+
+    .finding-card h3 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 1.25rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .finding-card p {
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .deliverable-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .deliverable-card {
+      background: rgba(255, 255, 255, 0.93);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-left: 6px solid #4A7856;
+      border-radius: 18px;
+      padding: 1.25rem;
+      box-shadow: 0 12px 28px rgba(26, 31, 22, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .deliverable-card h3 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 1.35rem;
+      margin: 0;
+    }
+
+    .deliverable-card p {
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .pdf-preview {
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #f5f7f2;
+      margin-top: auto;
+    }
+
+    .pdf-preview iframe {
+      width: 100%;
+      height: 330px;
+      border: 0;
+      display: block;
+      background: #f5f7f2;
+    }
+
+    .secondary-project {
+      background: rgba(255, 255, 255, 0.93);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-radius: 22px;
+      padding: 1.75rem;
+      box-shadow: 0 12px 30px rgba(26, 31, 22, 0.08);
+      margin-top: 2rem;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .secondary-project h2 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .secondary-project p {
+      font-size: 1.03rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    /* =====================================================
+       SAFETY PROJECT FIX
+       This makes the two PDF cards spread across the full row.
+    ===================================================== */
+
+    .safety-deliverable-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 2rem !important;
+      width: 100%;
+      align-items: stretch;
+    }
+
+    .safety-deliverable-grid .deliverable-card {
+      min-height: 100%;
+      padding: 1.6rem;
+    }
+
+    .safety-deliverable-grid .pdf-preview iframe {
+      height: 430px;
+    }
+
+    .togal-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .compact-insight-list {
+      background: #eef7ec;
+      border: 1px solid rgba(30, 63, 32, 0.14);
+      border-radius: 18px;
+      padding: 1.25rem;
+    }
+
+    .compact-insight-list h3 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      margin-bottom: 0.75rem;
+    }
+
+    .compact-insight-list ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .compact-insight-list li {
+      line-height: 1.65;
+      margin-bottom: 0.45rem;
+    }
+
+    .togal-file-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .togal-file-grid a {
+      text-align: center;
+      text-decoration: none;
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      color: #1E3F20;
+      background: #eef7ec;
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-radius: 14px;
+      padding: 0.85rem 0.9rem;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .togal-file-grid a:hover {
+      background: #94ECBE;
+      color: #1A1F16;
+      transform: translateY(-2px);
+    }
+
+    .reflection-panel {
+      background: rgba(30, 63, 32, 0.94);
+      color: #ffffff;
+      border-radius: 22px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 14px 34px rgba(26, 31, 22, 0.14);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .reflection-panel h2 {
+      font-family: "Fraunces", serif;
+      color: #94ECBE;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .reflection-panel p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .future-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .future-card {
+      background: rgba(255, 255, 255, 0.93);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-radius: 18px;
+      padding: 1.25rem;
+      box-shadow: 0 10px 24px rgba(26, 31, 22, 0.06);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .future-card h3 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      margin-bottom: 0.65rem;
+    }
+
+    .future-card p {
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 1100px) {
+      .featured-layout,
+      .togal-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .project-stats-grid,
+      .deliverable-grid,
+      .findings-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 800px) {
+      .safety-deliverable-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .safety-deliverable-grid .pdf-preview iframe {
+        height: 330px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .featured-project,
+      .secondary-project,
+      .reflection-panel {
+        padding: 1.35rem;
+      }
+
+      .featured-project h2,
+      .secondary-project h2,
+      .reflection-panel h2 {
+        font-size: 1.6rem;
+      }
+
+      .project-stats-grid,
+      .deliverable-grid,
+      .findings-grid,
+      .future-grid,
+      .togal-file-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pdf-preview iframe {
+        height: 270px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header class="site-header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">Jacob Appling</a>
+    <<div class="container nav-container">
+  <div class="journey-arch" aria-hidden="true">
+  <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+    <path id="journey-curve" d="M30 145 Q210 -35 390 145" fill="none"/>
+    <text>
+      <textPath href="#journey-curve" startOffset="50%" text-anchor="middle">
+        ENJOY THE JOURNEY
+      </textPath>
+    </text>
+  </svg>
+</div>
 
+  <a href="index.html" class="logo">Jacob Appling</a>
       <nav class="navbar">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -39,68 +488,370 @@
       <div class="container">
         <h1>Projects Completed This Semester</h1>
         <p>
-          This page highlights major assignments, coursework, and portfolio
-          projects completed during the semester.
+          This page highlights major assignments, research, demonstrations, and portfolio projects
+          completed during the semester.
         </p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="card-grid">
-          <article class="card">
-            <h3>Project 1: Evaluating LLMs</h3>
+
+        <!-- FEATURED FINAL PROJECT -->
+        <article class="featured-project">
+          <div class="featured-layout">
+            <div>
+              <span class="project-kicker">Featured Final Project</span>
+
+              <h2>AI Adoption in Construction and Facilities</h2>
+
+              <p>
+                This final project studied how artificial intelligence is being adopted,
+                implemented, and managed within construction, facilities, healthcare, and
+                AEC-related organizations. The project combined academic research with
+                anonymized interviews from professionals connected to healthcare operations,
+                construction technology, project management, and executive leadership.
+              </p>
+
+              <p>
+                The central takeaway was that AI adoption is not just about buying software.
+                It is an organizational change process that depends on governance, user trust,
+                workflow fit, training, data protection, and measurable value. Across the
+                interviews, AI appeared strongest in office-based, document-heavy workflows,
+                while field adoption remains promising but more difficult to scale.
+              </p>
+
+              <div class="project-action-row">
+                <a href="files/FinalProject/AI_Adoption_Final_Report.pdf" target="_blank">Open Final Report</a>
+                <a href="files/FinalProject/AI_Adoption_Final_Presentation.pdf" target="_blank">Open Slide Deck</a>
+                <a href="files/FinalProject/AI_Adoption_Interview_Appendices.pdf" target="_blank">Open Appendices</a>
+                <a href="files/FinalProject/AI_Adoption_Final_Presentation_Video.mp4" target="_blank">Watch Video</a>
+              </div>
+
+              <div class="project-stats-grid">
+                <div class="project-stat">
+                  <h4>Course</h4>
+                  <p>CMET 6000</p>
+                </div>
+
+                <div class="project-stat">
+                  <h4>Research Type</h4>
+                  <p>Qualitative interview study</p>
+                </div>
+
+                <div class="project-stat">
+                  <h4>Interview Sample</h4>
+                  <p>Four anonymized perspectives</p>
+                </div>
+
+                <div class="project-stat">
+                  <h4>Main Theme</h4>
+                  <p>AI as workflow support, not replacement</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-video-card">
+              <video controls preload="metadata" poster="images/project-thumbnails/final-project-video.jpg">
+                <source src="files/FinalProject/AI_Adoption_Final_Presentation_Video.mp4" type="video/mp4">
+              </video>
+              <div class="video-caption">
+                Final project presentation video summarizing the study purpose, interview themes,
+                findings, recommendations, and future outlook.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- FINAL PROJECT FINDINGS -->
+        <div class="section-divider-heading">
+          <h2>Key Findings From the Final Project</h2>
+          <p>
+            The findings below summarize the main themes that appeared across the literature
+            review, interview data, final report, and presentation.
+          </p>
+        </div>
+
+        <div class="findings-grid">
+          <article class="finding-card">
+            <span class="finding-number">1</span>
+            <h3>AI Adoption Is Problem-Driven</h3>
             <p>
-              Use this section to describe your project, what you learned, and how
-              it connects to AI or construction management.
+              The strongest use cases were connected to real workflow pain points:
+              meeting notes, document review, internal process questions, safety observations,
+              and specification searches.
             </p>
-            <a href="#" class="text-link">View Project Details</a>
           </article>
 
-          <article class="card">
-            <h3>Project 2: GPT Creation</h3>
+          <article class="finding-card">
+            <span class="finding-number">2</span>
+            <h3>Governance Comes First</h3>
             <p>
-              Describe your GPT creation assignment, how it functioned, and what
-              value it provided for your coursework.
+              Security, privacy, HIPAA/PHI concerns, proprietary data, and human review
+              were major factors in how organizations selected and implemented AI tools.
             </p>
-            <a href="#" class="text-link">View Project Details</a>
           </article>
 
-          <article class="card">
-            <h3>Project 3: Research or Final Project</h3>
+          <article class="finding-card">
+            <span class="finding-number">3</span>
+            <h3>Office Workflows Benefit First</h3>
             <p>
-              Add details for one of your larger semester assignments or final
-              course project here.
+              AI is currently showing clearer value in document-heavy and process-heavy
+              work than in field-side operations where data is messier and errors carry
+              higher consequences.
             </p>
-            <a href="#" class="text-link">View Project Details</a>
           </article>
 
-          <article class="card">
-            <h3>Project 4</h3>
+          <article class="finding-card">
+            <span class="finding-number">4</span>
+            <h3>Pilots Build Trust</h3>
             <p>
-              This placeholder can be replaced later with another assignment,
-              deliverable, or presentation from the course.
+              The organizations studied tended to use committees, pilots, champions,
+              training sessions, and feedback loops before scaling AI tools broadly.
             </p>
-            <a href="#" class="text-link">View Project Details</a>
           </article>
 
-          <article class="card">
-            <h3>Project 5</h3>
+          <article class="finding-card">
+            <span class="finding-number">5</span>
+            <h3>Human Review Remains Essential</h3>
             <p>
-              Add your own project title and description here as your website grows.
+              AI output was treated as support rather than final authority. Clinical,
+              contractual, safety, and field-related outputs still require professional
+              judgment.
             </p>
-            <a href="#" class="text-link">View Project Details</a>
           </article>
 
-          <article class="card">
-            <h3>Portfolio Reflection</h3>
+          <article class="finding-card">
+            <span class="finding-number">6</span>
+            <h3>Future Value Is in Integration</h3>
             <p>
-              You could use this section to reflect on your growth, learning, and
-              overall progress throughout the semester.
+              AI agents, reality capture, BIM-to-field comparisons, and internal process
+              automation may become more valuable as organizations improve data quality
+              and governance.
             </p>
-            <a href="#" class="text-link">Read Reflection</a>
           </article>
         </div>
+
+        <!-- FINAL PROJECT DELIVERABLES -->
+        <div class="section-divider-heading">
+          <h2>Final Project Deliverables</h2>
+          <p>
+            These files represent the main final project submission materials. The Word and
+            PowerPoint files were converted to PDFs so they can open more easily in the browser.
+          </p>
+        </div>
+
+        <div class="deliverable-grid">
+          <article class="deliverable-card">
+            <h3>Final Report</h3>
+            <p>
+              Full APA-style report covering the abstract, literature review, methodology,
+              findings, discussion, conclusion, recommendations, references, and appendices.
+            </p>
+
+            <div class="project-action-row">
+              <a href="files/FinalProject/AI_Adoption_Final_Report.pdf" target="_blank">Open Report PDF</a>
+            </div>
+
+            <div class="pdf-preview">
+              <iframe src="files/FinalProject/AI_Adoption_Final_Report.pdf"></iframe>
+            </div>
+          </article>
+
+          <article class="deliverable-card">
+            <h3>Presentation Slide Deck</h3>
+            <p>
+              Professional slide deck summarizing the project background, interview sample,
+              tools, findings, challenges, recommendations, and future outlook.
+            </p>
+
+            <div class="project-action-row">
+              <a href="files/FinalProject/AI_Adoption_Final_Presentation.pdf" target="_blank">Open Slide Deck PDF</a>
+            </div>
+
+            <div class="pdf-preview">
+              <iframe src="files/FinalProject/AI_Adoption_Final_Presentation.pdf"></iframe>
+            </div>
+          </article>
+
+          <article class="deliverable-card">
+            <h3>Anonymized Interview Appendices</h3>
+            <p>
+              Appendix notes summarizing the anonymized interview responses used to support
+              the final report while protecting participant and organization identities.
+            </p>
+
+            <div class="project-action-row">
+              <a href="files/FinalProject/AI_Adoption_Interview_Appendices.pdf" target="_blank">Open Appendices PDF</a>
+            </div>
+
+            <div class="pdf-preview">
+              <iframe src="files/FinalProject/AI_Adoption_Interview_Appendices.pdf"></iframe>
+            </div>
+          </article>
+        </div>
+
+        <!-- SAFETY PROJECT -->
+        <article class="secondary-project">
+          <span class="project-kicker">CMET 6240 Safety Project</span>
+
+          <h2>BIM and Safety</h2>
+
+          <div class="featured-layout">
+            <div>
+              <p>
+                This project explores how Building Information Modeling can help create safer
+                construction sites. The work focuses on how BIM can improve communication,
+                identify hazards earlier, support safety planning, and help project teams better
+                coordinate high-risk construction activities.
+              </p>
+
+              <p>
+                The project connects BIM with construction safety by showing how digital models,
+                4D planning, hazard identification, site logistics, and visual communication can
+                support safer workflows before and during construction.
+              </p>
+
+              <div class="project-action-row">
+                <a href="files/SafetyProject/Safety_Project_Report.pdf" target="_blank">Open Safety Report</a>
+                <a href="files/SafetyProject/Safety_Project_Presentation.pdf" target="_blank">Open Safety Presentation</a>
+                <a href="files/SafetyProject/Safety_Project_Video.mp4" target="_blank">Watch Video</a>
+              </div>
+            </div>
+
+            <div class="project-video-card">
+              <video controls preload="metadata" poster="images/project-thumbnails/safety-project-video.jpg">
+                <source src="files/SafetyProject/Safety_Project_Video.mp4" type="video/mp4">
+              </video>
+              <div class="video-caption">
+                Safety project video presentation for CMET 6240, focused on BIM-supported safety planning,
+                hazard communication, and construction risk reduction.
+              </div>
+            </div>
+          </div>
+
+          <div class="section-divider-heading">
+            <h2>Safety Project Deliverables</h2>
+            <p>
+              These files include the written safety report and presentation slides. The report and
+              slide deck were converted to PDFs so they open cleanly in the browser.
+            </p>
+          </div>
+
+          <div class="deliverable-grid safety-deliverable-grid">
+            <article class="deliverable-card">
+              <h3>Written Report</h3>
+              <p>
+                Written explanation of how BIM can improve construction safety through better planning,
+                coordination, hazard tracking, visual communication, and model-based workflows.
+              </p>
+
+              <div class="project-action-row">
+                <a href="files/SafetyProject/Safety_Project_Report.pdf" target="_blank">Open Report PDF</a>
+              </div>
+
+              <div class="pdf-preview">
+                <iframe src="files/SafetyProject/Safety_Project_Report.pdf"></iframe>
+              </div>
+            </article>
+
+            <article class="deliverable-card">
+              <h3>Presentation Slides</h3>
+              <p>
+                Slide deck summarizing how BIM helps project teams identify hazards, communicate risks
+                in the field, and plan safer construction workflows.
+              </p>
+
+              <div class="project-action-row">
+                <a href="files/SafetyProject/Safety_Project_Presentation.pdf" target="_blank">Open Presentation PDF</a>
+              </div>
+
+              <div class="pdf-preview">
+                <iframe src="files/SafetyProject/Safety_Project_Presentation.pdf"></iframe>
+              </div>
+            </article>
+          </div>
+        </article>
+
+        <!-- TOGAL PROJECT AS SECONDARY -->
+        <article class="secondary-project">
+          <span class="project-kicker">Additional Project</span>
+
+          <h2>Togal.AI Demo Results and Estimating Tool Evaluation</h2>
+
+          <div class="togal-layout">
+            <div>
+              <p>
+                This project evaluated Togal.AI as an AI-enabled estimating and takeoff tool
+                using multiple sets of construction drawings. The assignment focused on where
+                the software appeared accurate, where it struggled, and how AI-enabled estimating
+                tools may affect estimating workflows in the future.
+              </p>
+
+              <p>
+                My overall conclusion was that Togal.AI has strong potential as an estimating
+                assistant, especially for reducing repetitive takeoff work, but it still requires
+                human review and professional judgment before its output can be trusted in a
+                bid process.
+              </p>
+            </div>
+
+            <div class="compact-insight-list">
+              <h3>Togal.AI Takeaways</h3>
+              <ul>
+                <li>Most accurate with door, window, and parking counts.</li>
+                <li>Mostly useful for basic footprint review.</li>
+                <li>Less accurate with net/gross areas, centerlines, and elevation takeoffs.</li>
+                <li>Raises ethical questions around estimating liability and entry-level training.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="section-divider-heading">
+            <h2>Togal.AI Plan Set Files</h2>
+            <p>
+              These PDF files show the plan sets and takeoff results used during the demo.
+            </p>
+          </div>
+
+          <div class="togal-file-grid">
+            <a href="files/TogalAI/TogalAI_Military_Office.pdf" target="_blank">Military Office Set</a>
+            <a href="files/TogalAI/TogalAI_Youth_Center.pdf" target="_blank">Youth Center Set</a>
+            <a href="files/TogalAI/TogalAI_Fire_Station.pdf" target="_blank">Fire Station Set</a>
+            <a href="files/TogalAI/TogalAI_Car_Dealership.pdf" target="_blank">Car Dealership Set</a>
+            <a href="files/TogalAI/TogalAI_Multistory_Hotel.pdf" target="_blank">Multistory Hotel Set</a>
+          </div>
+        </article>
+
+        <!-- REFLECTION -->
+        <article class="reflection-panel">
+          <h2>Project Reflection</h2>
+
+          <p>
+            My biggest takeaway from these projects is that construction technology only matters
+            when it solves real project problems. Whether the topic is AI adoption, BIM-supported
+            safety, or AI-enabled estimating, the strongest tools are the ones that improve
+            communication, reduce repetitive work, support better decisions, and help teams manage risk.
+          </p>
+
+          <p>
+            These projects also helped me connect my interests in project coordination, facilities,
+            BIM/VDC, healthcare construction, safety, and emerging technology. Long-term, I believe
+            construction professionals who understand both the field and digital tools will have an
+            advantage.
+          </p>
+        </article>
+
+        <!-- FUTURE PROJECT SPACES -->
+        <div class="section-divider-heading">
+          <p>
+          </p>
+        </div>
+
+            </p>
+          </article>
+        </div>
+
       </div>
     </section>
   </main>

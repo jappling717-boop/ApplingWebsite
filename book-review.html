@@ -13,21 +13,352 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* =====================================================
+       LITERATURE REVIEW PAGE CONTENT ONLY
+       Header/banner alignment comes from styles.css.
+    ===================================================== */
+
+    .review-showcase {
+      background: transparent !important;
+    }
+
+    .review-hero-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-left: 8px solid #94ECBE;
+      border-radius: 24px;
+      padding: 2.25rem;
+      box-shadow: 0 16px 38px rgba(26, 31, 22, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      margin-bottom: 2rem;
+    }
+
+    .review-kicker {
+      display: inline-flex;
+      width: fit-content;
+      background: #94ECBE;
+      color: #1A1F16;
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 0.45rem 1rem;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .review-hero-card h2 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 2.4rem;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .review-hero-card p {
+      font-size: 1.08rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .review-question-box {
+      background: #eef7ec;
+      border: 1px solid rgba(30, 63, 32, 0.14);
+      border-radius: 18px;
+      padding: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .review-question-box h3 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .review-question-box p {
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+
+    .review-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2.25rem;
+    }
+
+    .review-stat {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-radius: 18px;
+      padding: 1.25rem;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(26, 31, 22, 0.06);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .review-stat strong {
+      display: block;
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 1.75rem;
+      line-height: 1;
+      margin-bottom: 0.45rem;
+    }
+
+    .review-stat span {
+      color: #1A1F16;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .review-section-heading {
+      margin: 2.5rem 0 1.25rem;
+    }
+
+    .review-section-heading h2 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 2rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .review-section-heading p {
+      max-width: 850px;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .takeaway-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .takeaway-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 12px 28px rgba(26, 31, 22, 0.08);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .takeaway-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #94ECBE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      margin-bottom: 1rem;
+    }
+
+    .takeaway-card h3 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 1.35rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .takeaway-card p {
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .source-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .source-showcase-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-left: 6px solid #4A7856;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 12px 28px rgba(26, 31, 22, 0.08);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .source-showcase-card h3 {
+      font-family: "Fraunces", serif;
+      color: #1E3F20;
+      font-size: 1.25rem;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .source-authors {
+      color: #1A1F16;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .source-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .source-tags span {
+      background: #eef7ec;
+      color: #1E3F20;
+      border: 1px solid rgba(30, 63, 32, 0.14);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      font-family: "Fraunces", serif;
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .source-summary {
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .why-it-matters {
+      background: #eef7ec;
+      border-radius: 16px;
+      padding: 1rem;
+      border: 1px solid rgba(30, 63, 32, 0.14);
+      margin-top: auto;
+    }
+
+    .why-it-matters strong {
+      display: block;
+      color: #1E3F20;
+      font-family: "Fraunces", serif;
+      margin-bottom: 0.35rem;
+    }
+
+    .why-it-matters p {
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    .synthesis-panel {
+      background: rgba(30, 63, 32, 0.94);
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 2rem;
+      margin-top: 2.5rem;
+      box-shadow: 0 14px 34px rgba(26, 31, 22, 0.14);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .synthesis-panel h2 {
+      color: #94ECBE;
+      font-family: "Fraunces", serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .synthesis-panel p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    .reflection-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-left: 8px solid #94ECBE;
+      border-radius: 24px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 14px 34px rgba(26, 31, 22, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .reflection-card h2 {
+      color: #1E3F20;
+      font-family: "Fraunces", serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .reflection-card p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 1000px) {
+      .review-stats-grid,
+      .takeaway-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .source-showcase-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .review-hero-card,
+      .reflection-card,
+      .synthesis-panel {
+        padding: 1.35rem;
+      }
+
+      .review-hero-card h2,
+      .review-section-heading h2,
+      .synthesis-panel h2,
+      .reflection-card h2 {
+        font-size: 1.55rem;
+      }
+
+      .review-stats-grid,
+      .takeaway-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .source-showcase-card {
+        padding: 1.25rem;
+      }
+    }
+  </style>
 </head>
 
-<body>
-  <header class="site-header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">Jacob Appling</a>
+ <header class="site-header">
+    <<div class="container nav-container">
+  <div class="journey-arch" aria-hidden="true">
+  <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+    <path id="journey-curve" d="M30 145 Q210 -35 390 145" fill="none"/>
+    <text>
+      <textPath href="#journey-curve" startOffset="50%" text-anchor="middle">
+        ENJOY THE JOURNEY
+      </textPath>
+    </text>
+  </svg>
+</div>
 
+  <a href="index.html" class="logo">Jacob Appling</a>
       <nav class="navbar">
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="weekly-summaries.html">Weekly Digests</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="book-review.html" class="active">Literature Review</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="weekly-summaries.html">Weekly Digests</a></li>
+  <li><a href="projects.html">Projects</a></li>
+  <li><a href="book-review.html" class="active">Literature Review</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
       </nav>
 
       <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu">☰</button>
@@ -39,124 +370,253 @@
       <div class="container">
         <h1>Literature Review</h1>
         <p>
-          This page includes my course-related literature review, key takeaways,
-          and reflection on how the research connects to AI and construction
-          management.
+          A research showcase on AI adoption, construction management, BIM, risk,
+          organizational readiness, and facilities-related workflows.
         </p>
       </div>
     </section>
 
-    <section class="section literature-review-page">
+    <section class="section review-showcase">
       <div class="container">
 
-        <div class="card">
-          <h2>Reviewed Literature</h2>
+        <article class="review-hero-card">
+          <span class="review-kicker">Research Focus</span>
 
-          <p><strong>Overall Topic:</strong> AI Adoption in Construction and Facilities</p>
+          <h2>AI Adoption in Construction and Facilities</h2>
 
           <p>
-            This literature review examines how artificial intelligence is being adopted across the
-            architecture, engineering, construction, and facilities industries. The reviewed studies show
-            that AI is not just a new software trend, but an organizational change that affects project
-            planning, decision-making, risk management, BIM workflows, training, and long-term
-            competitiveness.
+            This literature review examines how artificial intelligence is being adopted across
+            architecture, engineering, construction, and facilities-related industries. The reviewed
+            studies show that AI is not just a software trend. It is an organizational shift that
+            affects planning, decision-making, risk management, BIM workflows, training, and
+            long-term competitiveness.
           </p>
 
-          <div class="source-list">
+          <div class="review-question-box">
+            <h3>Main Research Question</h3>
+            <p>
+              How is AI changing construction and facilities workflows, and what factors determine
+              whether organizations successfully adopt these tools?
+            </p>
+          </div>
+        </article>
 
-            <div class="source-item">
-              <h3>
-                Artificial Intelligence in Construction Project Management: A Structured Literature
-                Review of Its Evolution in Application and Future Trends
-              </h3>
-              <p><strong>Authors:</strong> Y. Adebayo, P. Udoh, X. B. Kamudyariwa, and O. A. Osobajo</p>
-              <p>
-                This study explains how AI is being used in construction project management, especially
-                in planning, monitoring, control, forecasting, scheduling, safety monitoring, and
-                decision-support. It shows that the strongest AI applications are those that provide
-                measurable value in real project environments.
-              </p>
-            </div>
+        <div class="review-stats-grid">
+          <div class="review-stat">
+            <strong>4</strong>
+            <span>Reviewed academic sources</span>
+          </div>
 
-            <div class="source-item">
-              <h3>
-                Artificial Intelligence (AI)-Based Technology Adoption in the Construction Industry:
-                A Cross-National Perspective Using the Technology Acceptance Model
-              </h3>
-              <p><strong>Authors:</strong> S. Na, S. Heo, W. Choi, C. Kim, and S. W. Whang</p>
-              <p>
-                This article focuses on why construction professionals accept or reject AI-based tools.
-                Using the Technology Acceptance Model, the authors argue that adoption depends on
-                perceived usefulness, ease of use, and how well the technology fits existing work
-                practices. This connects strongly to construction because even powerful tools will not
-                succeed if workers do not trust them or understand how to use them.
-              </p>
-            </div>
+          <div class="review-stat">
+            <strong>3</strong>
+            <span>Major adoption themes</span>
+          </div>
 
-            <div class="source-item">
-              <h3>
-                Advancing AI-Powered BIM for Circularity in Construction in the UK and Turkiye:
-                State-of-the-Art Review and Capability Maturity Modelling
-              </h3>
-              <p>
-                <strong>Authors:</strong> T. Omotayo, A. M. Tanyer, J. Deng, A. Kaima,
-                A. Akponeware, M. K. Pekericli, S. Shikder, and M. Ogunnusi
-              </p>
-              <p>
-                This study connects AI-powered BIM with circular economy goals and organizational
-                maturity. The authors explain that AI adoption is shaped by integration, technology
-                development, government support, education, incentives, industry readiness, and cultural
-                attitudes. This is important because it shows that AI adoption happens in stages and
-                depends on more than simply buying advanced software.
-              </p>
-            </div>
+          <div class="review-stat">
+            <strong>AI</strong>
+            <span>Construction technology focus</span>
+          </div>
 
-            <div class="source-item">
-              <h3>
-                Generative AI in Construction Risk Management: A Bibliometric Analysis of the
-                Associated Benefits and Risks
-              </h3>
-              <p>
-                <strong>Authors:</strong> M. A. H. Mohamed, M. K. S. Al-Mhdawi, U. Ojiako,
-                N. Dacre, A. Qazi, and F. Rahimian
-              </p>
-              <p>
-                This article reviews the fast-growing interest in generative AI for construction risk
-                management. It highlights the benefits of improved prediction, adaptive response,
-                decision support, and information processing, while also recognizing concerns related to
-                data security, privacy, performance, compliance, and responsible implementation.
-              </p>
-            </div>
-
+          <div class="review-stat">
+            <strong>BIM</strong>
+            <span>Digital project delivery connection</span>
           </div>
         </div>
 
-        <div class="card two-spacer">
-          <h3>Key Takeaways</h3>
-
-          <ul class="styled-list">
-            <li>
-              AI adoption in construction is strongest when it solves practical project problems,
-              such as scheduling, planning, safety monitoring, forecasting, BIM coordination, and
-              decision-support.
-            </li>
-
-            <li>
-              Successful AI implementation depends on people, not just technology. Workers and
-              organizations must see the tools as useful, easy to use, trustworthy, and compatible
-              with existing construction workflows.
-            </li>
-
-            <li>
-              AI adoption is a gradual maturity process. Companies need training, leadership,
-              clear policies, data governance, and a willingness to manage risks before AI can become
-              fully embedded in construction and facilities operations.
-            </li>
-          </ul>
+        <div class="review-section-heading">
+          <h2>Key Takeaways</h2>
+          <p>
+            These are the major patterns that appeared across the reviewed research.
+          </p>
         </div>
 
-        <div class="card two-spacer">
-          <h3>My Reflection</h3>
+        <div class="takeaway-grid">
+          <article class="takeaway-card">
+            <div class="takeaway-icon">🏗️</div>
+            <h3>AI Must Solve Real Project Problems</h3>
+            <p>
+              AI adoption is strongest when tools improve planning, scheduling, safety monitoring,
+              forecasting, BIM coordination, decision-support, or document-heavy workflows.
+            </p>
+          </article>
+
+          <article class="takeaway-card">
+            <div class="takeaway-icon">🤝</div>
+            <h3>Trust and Usability Matter</h3>
+            <p>
+              Construction professionals are more likely to use AI when they see the tool as useful,
+              easy to understand, compatible with existing workflows, and worth trusting.
+            </p>
+          </article>
+
+          <article class="takeaway-card">
+            <div class="takeaway-icon">📈</div>
+            <h3>Adoption Is a Maturity Process</h3>
+            <p>
+              AI implementation requires training, leadership, data governance, policy, and a
+              willingness to manage risk before tools become fully embedded in daily operations.
+            </p>
+          </article>
+        </div>
+
+        <div class="review-section-heading">
+          <h2>Reviewed Sources</h2>
+          <p>
+            Each source below is summarized by its main idea, major topic area, and why it matters
+            to construction or facilities management.
+          </p>
+        </div>
+
+        <div class="source-showcase-grid">
+
+          <article class="source-showcase-card">
+            <div class="source-tags">
+              <span>Project Management</span>
+              <span>Scheduling</span>
+              <span>Decision-Support</span>
+            </div>
+
+            <h3>
+              Artificial Intelligence in Construction Project Management: A Structured Literature
+              Review of Its Evolution in Application and Future Trends
+            </h3>
+
+            <p class="source-authors">
+              Authors: Y. Adebayo, P. Udoh, X. B. Kamudyariwa, and O. A. Osobajo
+            </p>
+
+            <p class="source-summary">
+              This study explains how AI is being used in construction project management,
+              especially in planning, monitoring, control, forecasting, scheduling, safety monitoring,
+              and decision-support.
+            </p>
+
+            <div class="why-it-matters">
+              <strong>Why it matters:</strong>
+              <p>
+                The strongest AI applications are the ones that create measurable value in real
+                project environments, not just impressive demonstrations.
+              </p>
+            </div>
+          </article>
+
+          <article class="source-showcase-card">
+            <div class="source-tags">
+              <span>Adoption</span>
+              <span>Trust</span>
+              <span>Technology Acceptance</span>
+            </div>
+
+            <h3>
+              Artificial Intelligence (AI)-Based Technology Adoption in the Construction Industry:
+              A Cross-National Perspective Using the Technology Acceptance Model
+            </h3>
+
+            <p class="source-authors">
+              Authors: S. Na, S. Heo, W. Choi, C. Kim, and S. W. Whang
+            </p>
+
+            <p class="source-summary">
+              This article focuses on why construction professionals accept or reject AI-based tools.
+              Using the Technology Acceptance Model, the authors argue that adoption depends on
+              perceived usefulness, ease of use, and fit with existing work practices.
+            </p>
+
+            <div class="why-it-matters">
+              <strong>Why it matters:</strong>
+              <p>
+                Even powerful tools will not succeed if workers do not trust them, understand them,
+                or see how they fit into daily construction workflows.
+              </p>
+            </div>
+          </article>
+
+          <article class="source-showcase-card">
+            <div class="source-tags">
+              <span>BIM</span>
+              <span>Circularity</span>
+              <span>Organizational Maturity</span>
+            </div>
+
+            <h3>
+              Advancing AI-Powered BIM for Circularity in Construction in the UK and Turkiye:
+              State-of-the-Art Review and Capability Maturity Modelling
+            </h3>
+
+            <p class="source-authors">
+              Authors: T. Omotayo, A. M. Tanyer, J. Deng, A. Kaima, A. Akponeware,
+              M. K. Pekericli, S. Shikder, and M. Ogunnusi
+            </p>
+
+            <p class="source-summary">
+              This study connects AI-powered BIM with circular economy goals and organizational
+              maturity. The authors explain that adoption is shaped by integration, technology
+              development, government support, education, incentives, industry readiness, and culture.
+            </p>
+
+            <div class="why-it-matters">
+              <strong>Why it matters:</strong>
+              <p>
+                AI adoption happens in stages and depends on more than simply buying advanced
+                software. Organizations need readiness, process alignment, and digital maturity.
+              </p>
+            </div>
+          </article>
+
+          <article class="source-showcase-card">
+            <div class="source-tags">
+              <span>Risk Management</span>
+              <span>Generative AI</span>
+              <span>Governance</span>
+            </div>
+
+            <h3>
+              Generative AI in Construction Risk Management: A Bibliometric Analysis of the
+              Associated Benefits and Risks
+            </h3>
+
+            <p class="source-authors">
+              Authors: M. A. H. Mohamed, M. K. S. Al-Mhdawi, U. Ojiako, N. Dacre,
+              A. Qazi, and F. Rahimian
+            </p>
+
+            <p class="source-summary">
+              This article reviews the fast-growing interest in generative AI for construction risk
+              management. It highlights improved prediction, adaptive response, decision support, and
+              information processing, while recognizing concerns related to data security, privacy,
+              performance, compliance, and responsible implementation.
+            </p>
+
+            <div class="why-it-matters">
+              <strong>Why it matters:</strong>
+              <p>
+                AI may help project teams better anticipate and manage risk, but responsible use
+                requires governance, privacy protection, and human review.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <article class="synthesis-panel">
+          <h2>Overall Synthesis</h2>
+
+          <p>
+            Across the reviewed studies, AI appears most valuable when it supports existing
+            construction workflows instead of replacing professional judgment. The research points
+            toward a future where AI helps teams organize information, forecast issues, support
+            decisions, and improve coordination.
+          </p>
+
+          <p>
+            However, adoption depends heavily on people, process, and leadership. Organizations
+            need clear policies, training, trustworthy tools, data governance, and a practical reason
+            to use AI before the technology can become a normal part of project delivery.
+          </p>
+        </article>
+
+        <article class="reflection-card">
+          <h2>My Reflection</h2>
 
           <p>
             This literature review helped me understand that AI in construction is not just about
@@ -171,10 +631,7 @@
             construction, this topic connects directly to my professional goals. AI could become a
             valuable tool for project coordinators, project managers, and facilities teams, but only
             if organizations provide proper training and create clear processes for using it
-            responsibly. The review also showed me that human judgment will still matter. AI may
-            help organize information and identify patterns, but construction professionals will
-            still need to verify information, communicate with teams, understand field conditions,
-            and make responsible decisions.
+            responsibly.
           </p>
 
           <p>
@@ -183,7 +640,7 @@
             ones that combine strong tools with good training, clear policies, and a culture that is
             open to innovation.
           </p>
-        </div>
+        </article>
 
       </div>
     </section>
@@ -196,5 +653,5 @@
   </footer>
 
   <script src="script.js"></script>
-</body>
+<body class="header-nudge-page">
 </html>

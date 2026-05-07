@@ -20,7 +20,7 @@
     ===================================================== */
 
     .digest-showcase-section {
-      background: #f5f7f2;
+      background: transparent;
     }
 
     .digest-intro {
@@ -48,7 +48,7 @@
     }
 
     .digest-showcase-card {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.92);
       border: 1px solid rgba(30, 63, 32, 0.16);
       border-left: 6px solid #4A7856;
       border-radius: 18px;
@@ -57,6 +57,8 @@
       display: flex;
       flex-direction: column;
       gap: 1.15rem;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
     }
 
     .digest-card-header {
@@ -148,12 +150,12 @@
       display: block;
     }
 
-    .document-preview-card {
+    .interactive-preview-card {
       min-height: 280px;
       border-radius: 16px;
       background:
-        radial-gradient(circle at top left, rgba(148, 236, 190, 0.45), transparent 35%),
-        linear-gradient(135deg, #eef7ec, #ffffff);
+        radial-gradient(circle at top left, rgba(148, 236, 190, 0.55), transparent 35%),
+        linear-gradient(135deg, rgba(238, 247, 236, 0.96), rgba(255, 255, 255, 0.96));
       border: 1px solid rgba(30, 63, 32, 0.16);
       display: flex;
       flex-direction: column;
@@ -164,19 +166,19 @@
       text-align: center;
     }
 
-    .document-preview-card .preview-icon {
+    .interactive-preview-card .preview-icon {
       font-size: 3rem;
     }
 
-    .document-preview-card h4 {
+    .interactive-preview-card h4 {
       font-family: "Fraunces", serif;
       color: var(--color-primary);
       font-size: 1.35rem;
       margin: 0;
     }
 
-    .document-preview-card p {
-      max-width: 360px;
+    .interactive-preview-card p {
+      max-width: 390px;
       line-height: 1.6;
       margin: 0;
     }
@@ -197,6 +199,23 @@
       background: #94ECBE;
       border-radius: 999px;
       padding: 0.35rem 0.7rem;
+    }
+
+    .preview-open-link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      text-decoration: none;
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      color: #1E3F20;
+      background: #94ECBE;
+      border-radius: 999px;
+      padding: 0.55rem 1rem;
+    }
+
+    .preview-open-link:hover {
+      background: #7ed8aa;
+      color: #1A1F16;
     }
 
     .pdf-preview-card {
@@ -236,7 +255,7 @@
         height: 220px;
       }
 
-      .document-preview-card {
+      .interactive-preview-card {
         min-height: 220px;
       }
 
@@ -253,8 +272,19 @@
 
 <body>
   <header class="site-header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">Jacob Appling</a>
+    <<div class="container nav-container">
+  <div class="journey-arch" aria-hidden="true">
+  <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+    <path id="journey-curve" d="M30 145 Q210 -35 390 145" fill="none"/>
+    <text>
+      <textPath href="#journey-curve" startOffset="50%" text-anchor="middle">
+        ENJOY THE JOURNEY
+      </textPath>
+    </text>
+  </svg>
+</div>
+
+  <a href="index.html" class="logo">Jacob Appling</a>
 
       <nav class="navbar">
         <ul class="nav-links">
@@ -275,9 +305,9 @@
       <div class="container">
         <h1>Weekly Digests</h1>
         <p>
-          This page contains my weekly article summaries, presentation links, and
-          visual AI elements related to construction management.
-        </p>
+          This page consists of the weekly digests that were constructed using AI
+          tools including ChatGPT, Gemini, and others. Each digest includes a written summary, a 
+          powerpoint presentation, and a visual aid in the form of a video or interactive component.
       </div>
     </section>
 
@@ -287,9 +317,7 @@
         <div class="digest-intro">
           <h2>Coursework Archive</h2>
           <p>
-            Each weekly digest includes the written summary, presentation, and any related visual
-            or interactive component. Use the buttons on each card to open the full deliverables.
-          </p>
+          
         </div>
 
         <div class="digest-showcase-grid">
@@ -410,22 +438,29 @@
             <div class="digest-card-header">
               <span class="week-label">Week 8</span>
               <h3>Agentic AI and Construction</h3>
-              <p>Written digest and presentation files.</p>
+              <p>Written digest, presentation, and interactive AI component.</p>
             </div>
 
             <div class="digest-actions">
               <a href="files/Week08/Week8_Digest.pdf" target="_blank">Written Digest PDF</a>
               <a href="files/Week08/Week8_Presentation.pdf" target="_blank">Presentation PDF</a>
+              <a href="files/Week08/Week8_Interactive.pdf" target="_blank">Interactive Component</a>
             </div>
 
-            <div class="digest-preview document-preview-card">
-              <div class="preview-icon">📄</div>
-              <h4>Document + Slide Week</h4>
-              <p>Includes a written digest and presentation file converted to PDF.</p>
+            <div class="digest-preview interactive-preview-card">
+              <div class="preview-icon">🧠</div>
+              <h4>Interactive Component</h4>
+              <p>
+                This week includes an interactive component focused on agentic AI and the next stage of AI development.
+              </p>
               <div class="preview-tags">
                 <span>PDF</span>
-                <span>PDF</span>
+                <span>Interactive</span>
+                <span>AI Tools</span>
               </div>
+              <a class="preview-open-link" href="files/Week08/Week8_Interactive.pdf" target="_blank">
+                Open Interactive Component
+              </a>
             </div>
           </article>
 
@@ -458,22 +493,29 @@
             <div class="digest-card-header">
               <span class="week-label">Week 11</span>
               <h3>Interactive AI Component</h3>
-              <p>Written digest, presentation, and interactive component.</p>
+              <p>Written digest, presentation, and interactive AI component.</p>
             </div>
 
             <div class="digest-actions">
               <a href="files/Week11/Week11_Digest.pdf" target="_blank">Written Digest PDF</a>
               <a href="files/Week11/Week11_Presentation.pdf" target="_blank">Presentation PDF</a>
+              <a href="files/Week11/Week11_Interactive.pdf" target="_blank">Interactive Component</a>
             </div>
 
-            <div class="digest-preview document-preview-card">
-              <div class="preview-icon">🧠</div>
-              <h4>Interactive Component Week</h4>
-              <p>Includes a written summary and presentation converted to PDF.</p>
+            <div class="digest-preview interactive-preview-card">
+              <div class="preview-icon">⚙️</div>
+              <h4>Interactive AI Component</h4>
+              <p>
+                This week includes a separate interactive component connected to AI use, workflow support, and construction-related applications.
+              </p>
               <div class="preview-tags">
                 <span>PDF</span>
-                <span>PDF</span>
+                <span>Interactive</span>
+                <span>Workflow</span>
               </div>
+              <a class="preview-open-link" href="files/Week11/Week11_Interactive.pdf" target="_blank">
+                Open Interactive Component
+              </a>
             </div>
           </article>
 
@@ -506,23 +548,29 @@
             <div class="digest-card-header">
               <span class="week-label">Week 13</span>
               <h3>AI-Driven Procurement</h3>
-              <p>Written digest and procurement-focused presentation.</p>
+              <p>Written digest, presentation, and interactive procurement component.</p>
             </div>
 
             <div class="digest-actions">
               <a href="files/Week13/Week13_Digest.pdf" target="_blank">Written Digest PDF</a>
               <a href="files/Week13/Week13_Presentation.pdf" target="_blank">Presentation PDF</a>
+              <a href="files/Week13/Week13_Interactive.pdf" target="_blank">Interactive Component</a>
             </div>
 
-            <div class="digest-preview document-preview-card">
+            <div class="digest-preview interactive-preview-card">
               <div class="preview-icon">🏗️</div>
-              <h4>AI Procurement Focus</h4>
-              <p>Highlights AI-supported procurement and operations redesign.</p>
+              <h4>AI-Driven Procurement Component</h4>
+              <p>
+                This interactive component focuses on how AI can support procurement, operations, decision-making, and process redesign.
+              </p>
               <div class="preview-tags">
                 <span>PDF</span>
-                <span>PDF</span>
                 <span>Procurement</span>
+                <span>Operations</span>
               </div>
+              <a class="preview-open-link" href="files/Week13/Week13_Interactive.pdf" target="_blank">
+                Open Interactive Component
+              </a>
             </div>
           </article>
 
@@ -547,23 +595,23 @@
           </article>
 
           <!-- WEEK 15 -->
-          <article class="digest-showcase-card">
-            <div class="digest-card-header">
-              <span class="week-label">Week 15</span>
-              <h3>Final Digest + Infographic</h3>
-              <p>Written digest, presentation, and infographic summary.</p>
-            </div>
+<article class="digest-showcase-card">
+  <div class="digest-card-header">
+    <span class="week-label">Week 15</span>
+    <h3>Final Digest + Infographic</h3>
+    <p>Written digest, presentation, and infographic-style interactive component.</p>
+  </div>
 
-            <div class="digest-actions">
-              <a href="files/Week15/Week 15 Summarry.pdf" target="_blank">Written Digest PDF</a>
-              <a href="files/Week15/Week 15 Summar.pptx" target="_blank">Presentation</a>
-              <a href="files/Week15/Infographic summary.pdf" target="_blank">Infographic PDF</a>
-            </div>
+  <div class="digest-actions">
+    <a href="files/Week15/Week 15 Summarry.pdf" target="_blank">Written Digest PDF</a>
+    <a href="files/Week15/Week15_Presentation.pdf" target="_blank">Presentation PDF</a>
+    <a href="files/Week15/Week15_Interactive.pdf" target="_blank">Interactive Infographic</a>
+  </div>
 
-            <div class="digest-preview pdf-preview-card">
-              <iframe src="files/Week15/Infographic summary.pdf"></iframe>
-            </div>
-          </article>
+  <div class="digest-preview pdf-preview-card">
+    <iframe src="files/Week15/Week15_Interactive.pdf"></iframe>
+  </div>
+</article>
 
         </div>
       </div>

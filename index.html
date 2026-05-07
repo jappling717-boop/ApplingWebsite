@@ -16,6 +16,96 @@
 
   <style>
     /* =====================================================
+       HOMEPAGE WATCHER SECTION
+       Built directly into index.html so it overrides styles.css
+    ===================================================== */
+
+    #watcher-section {
+      background: transparent !important;
+      padding: 28px 0 38px !important;
+      margin: 0 !important;
+    }
+
+    #watcher-section .watcher-container {
+      width: 90% !important;
+      max-width: 1100px !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    #watcher-stage {
+      width: 280px !important;
+      max-width: 280px !important;
+      min-height: auto !important;
+      height: auto !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      overflow: visible !important;
+    }
+
+    #watcher-face {
+      width: 260px !important;
+      max-width: 260px !important;
+      height: auto !important;
+      max-height: 260px !important;
+      object-fit: contain !important;
+      display: block !important;
+      margin: 0 auto !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      filter: drop-shadow(0 16px 20px rgba(0, 0, 0, 0.35)) !important;
+      transition: opacity 0.08s ease !important;
+      user-select: none !important;
+      pointer-events: none !important;
+    }
+
+    #watcher-stage .watcher-caption {
+      margin-top: 0.95rem !important;
+      margin-bottom: 0 !important;
+      color: #94ECBE !important;
+      font-family: "Fraunces", serif !important;
+      font-size: 2.25rem !important;
+      font-weight: 900 !important;
+      line-height: 1.1 !important;
+      text-align: center !important;
+      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.45) !important;
+      white-space: nowrap !important;
+    }
+
+    @media (max-width: 700px) {
+      #watcher-section {
+        padding: 22px 0 30px !important;
+      }
+
+      #watcher-stage {
+        width: 210px !important;
+        max-width: 210px !important;
+      }
+
+      #watcher-face {
+        width: 190px !important;
+        max-width: 190px !important;
+        max-height: 190px !important;
+      }
+
+      #watcher-stage .watcher-caption {
+        font-size: 1.45rem !important;
+        white-space: normal !important;
+      }
+    }
+
+    /* =====================================================
        HOMEPAGE HERO LAYOUT + INTRO STYLE
     ===================================================== */
 
@@ -168,13 +258,24 @@
 
 <body>
   <header class="site-header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">Jacob Appling</a>
+    <<div class="container nav-container">
+  <div class="journey-arch" aria-hidden="true">
+  <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+    <path id="journey-curve" d="M30 145 Q210 -35 390 145" fill="none"/>
+    <text>
+      <textPath href="#journey-curve" startOffset="50%" text-anchor="middle">
+        ENJOY THE JOURNEY
+      </textPath>
+    </text>
+  </svg>
+</div>
+
+  <a href="index.html" class="logo">Jacob Appling</a>
 
       <nav class="navbar">
         <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="weekly-summaries.html">Weekly Digests</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="weekly-summaries.html" class="active">Weekly Digests</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="book-review.html">Literature Review</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -184,8 +285,25 @@
       <button id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu">☰</button>
     </div>
   </header>
-
   <main>
+    <section class="watcher-section" id="watcher-section">
+      <div class="container watcher-container">
+
+        <div class="watcher-stage" id="watcher-stage">
+          <img
+            id="watcher-face"
+            class="watcher-face"
+            src="images/face-center.png"
+            alt="Interactive floating head that follows the mouse"
+            style="width:260px !important; max-width:260px !important; height:auto !important; max-height:260px !important; object-fit:contain !important;"
+          />
+
+          <p class="watcher-caption">He Is Always Watching</p>
+        </div>
+
+      </div>
+    </section>
+
     <section class="hero">
       <div class="container hero-layout">
 
@@ -202,8 +320,8 @@
 
           <div class="hero-intro-card">
             <p class="hero-main-welcome">
-              This page is the property of Jacob Appling. Kick your feet up and make yourself
-              at home. Go ahead and explore all there is to offer!
+              This page is the property of Jacob Appling. Kick your feet up, make yourself
+              at home, and explore all there is to offer!
             </p>
 
             <p class="hero-sub-intro">
@@ -211,12 +329,12 @@
             </p>
 
             <ul class="hero-bio-list">
-              <li>Currently employed at CaroMont Health as the Project Coordinator in Facility Services.</li>
-              <li>Attended Appalachian State University and was a 4-year Scholar Athlete in football.</li>
-              <li>Pursuing a master’s degree in Construction and Facilities Engineering.</li>
-              <li>Resides in Shelby, NC. Born and raised.</li>
-              <li>Favorite food: chicken wings.</li>
-              <li>Hobbies: golfing, PlayStation, fishing, and watching/talking ball with the fellas.</li>
+              <li>I am currently employed at CaroMont Health as the Project Coordinator in Facility Services.</li>
+              <li>I attended Appalachian State University, where I was a four-year scholar-athlete in football.</li>
+              <li>I am pursuing a master’s degree in Construction and Facilities Engineering.</li>
+              <li>I reside in Shelby, NC, where I was born and raised.</li>
+              <li>My favorite food is chicken wings.</li>
+              <li>My hobbies include golfing, playing PlayStation, fishing, and watching and talking ball with the fellas.</li>
             </ul>
 
             <p class="hero-closing">
@@ -314,5 +432,83 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+    const watcherFace = document.getElementById("watcher-face");
+    const watcherStage = document.getElementById("watcher-stage");
+
+    const watcherImages = {
+      center: "images/face-center.png",
+      ten: "images/face-10.png",
+      twelve: "images/face-12.png",
+      two: "images/face-2.png",
+      four: "images/face-4.png",
+      six: "images/face-6.png",
+      eight: "images/face-8.png"
+    };
+
+    Object.values(watcherImages).forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    let currentWatcherImage = watcherImages.center;
+
+    function setWatcherImage(src) {
+      if (!watcherFace || currentWatcherImage === src) return;
+
+      currentWatcherImage = src;
+      watcherFace.style.opacity = "0.65";
+
+      window.setTimeout(() => {
+        watcherFace.src = src;
+        watcherFace.style.opacity = "1";
+      }, 45);
+    }
+
+    function updateWatcherFace(event) {
+      if (!watcherStage || !watcherFace) return;
+
+      const rect = watcherStage.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      const dx = event.clientX - centerX;
+      const dy = event.clientY - centerY;
+
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const centerRadius = Math.min(rect.width, rect.height) * 0.14;
+
+      if (distance < centerRadius) {
+        setWatcherImage(watcherImages.center);
+        return;
+      }
+
+      const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+      if (angle >= -120 && angle < -60) {
+        setWatcherImage(watcherImages.twelve);
+      } else if (angle >= -60 && angle < 0) {
+        setWatcherImage(watcherImages.two);
+      } else if (angle >= 0 && angle < 60) {
+        setWatcherImage(watcherImages.four);
+      } else if (angle >= 60 && angle < 120) {
+        setWatcherImage(watcherImages.six);
+      } else if (angle >= 120 && angle <= 180) {
+        setWatcherImage(watcherImages.eight);
+      } else {
+        setWatcherImage(watcherImages.ten);
+      }
+    }
+
+    window.addEventListener("mousemove", updateWatcherFace);
+
+    if (watcherStage) {
+      watcherStage.addEventListener("mouseleave", () => {
+        setWatcherImage(watcherImages.center);
+      });
+    }
+  </script>
+
 </body>
 </html>

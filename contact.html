@@ -13,20 +13,178 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* =====================================================
+       CONTACT PAGE CUSTOM STYLING
+       This does NOT touch the header or page banner.
+    ===================================================== */
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 420px) 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .contact-photo-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-left: 6px solid #4A7856;
+      border-radius: 22px;
+      padding: 1.25rem;
+      box-shadow: 0 14px 34px rgba(26, 31, 22, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .contact-photo-card img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 18px;
+      border: 4px solid #94ECBE;
+      box-shadow: 0 12px 28px rgba(26, 31, 22, 0.16);
+    }
+
+    .contact-photo-caption {
+      margin-top: 1rem;
+      color: #1E3F20;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(30, 63, 32, 0.16);
+      border-left: 6px solid #4A7856;
+      border-radius: 22px;
+      padding: 2rem;
+      box-shadow: 0 14px 34px rgba(26, 31, 22, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .contact-card h2,
+    .contact-card h3 {
+      color: #1E3F20;
+      margin-bottom: 1rem;
+    }
+
+    .contact-intro {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #1E3F20;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info-list {
+      display: grid;
+      gap: 0.9rem;
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .contact-info-item {
+      background: #eef7ec;
+      border: 1px solid rgba(30, 63, 32, 0.14);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .contact-info-item strong {
+      display: block;
+      color: #1E3F20;
+      font-family: "Fraunces", serif;
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-info-item a,
+    .contact-info-item span {
+      color: #1A1F16;
+      font-weight: 700;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-info-item a:hover {
+      color: #1E3F20;
+      text-decoration: underline;
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .interest-pill {
+      background: #eef7ec;
+      border: 1px solid rgba(30, 63, 32, 0.14);
+      border-radius: 999px;
+      padding: 0.75rem 1rem;
+      color: #1E3F20;
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-photo-card img {
+        height: 460px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .contact-card {
+        padding: 1.35rem;
+      }
+
+      .contact-photo-card img {
+        height: 380px;
+      }
+
+      .interest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-intro {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header class="site-header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">Jacob Appling</a>
+    <<div class="container nav-container">
+  <div class="journey-arch" aria-hidden="true">
+  <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
+    <path id="journey-curve" d="M30 145 Q210 -35 390 145" fill="none"/>
+    <text>
+      <textPath href="#journey-curve" startOffset="50%" text-anchor="middle">
+        ENJOY THE JOURNEY
+      </textPath>
+    </text>
+  </svg>
+</div>
 
+  <a href="index.html" class="logo">Jacob Appling</a>
       <nav class="navbar">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="weekly-summaries.html">Weekly Digests</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="book-review.html">Literature Review</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
 
@@ -36,11 +194,11 @@
 
   <main>
     <section class="page-banner">
-      <div class="container">
+      <div class="banner-inner">
         <h1>Contact / Connect</h1>
         <p>
-          Thank you for visiting my portfolio website. Feel free to connect with
-          me professionally.
+          Thank you for visiting my portfolio website. Feel free to reach out if you would
+          like to connect professionally or talk through ideas.
         </p>
       </div>
     </section>
@@ -48,30 +206,64 @@
     <section class="section">
       <div class="container">
 
-        <div class="card">
-          <h2>Contact Information</h2>
+        <div class="contact-layout">
 
-          <p><strong>Name:</strong> Jacob Appling</p>
-          <p><strong>Email:</strong> your-email@example.com</p>
-          <p><strong>LinkedIn:</strong> Add your LinkedIn profile here</p>
+          <aside class="contact-photo-card">
+            <img src="images/contact-photo.jpg" alt="Jacob Appling in uptown Charlotte" />
+            <p class="contact-photo-caption">
+              Thanks for visiting my portfolio. I am always open to connecting, learning,
+              and talking through ideas in construction, facilities, CAD, and technology.
+            </p>
+          </aside>
 
-          <p>
-            I am interested in opportunities, conversations, and collaboration
-            related to construction management, facilities, construction
-            technology, and artificial intelligence in the built environment.
-          </p>
-        </div>
+          <div>
+            <div class="contact-card">
+              <h2>Contact Information</h2>
 
-        <div class="card two-spacer">
-          <h3>Professional Interests</h3>
+              <p class="contact-intro">
+                Reach out to me if you would like to connect, discuss construction, CAD,
+                AI, or honestly anything that is on your mind.
+              </p>
 
-          <ul class="styled-list">
-            <li>AI in Construction Management</li>
-            <li>Construction Technology</li>
-            <li>Facilities and Operations</li>
-            <li>Project Coordination and Professional Growth</li>
-            <li>BIM, VDC, and Digital Project Delivery</li>
-          </ul>
+              <div class="contact-info-list">
+                <div class="contact-info-item">
+                  <strong>Name</strong>
+                  <span>Jacob Appling</span>
+                </div>
+
+                <div class="contact-info-item">
+                  <strong>Phone</strong>
+                  <a href="tel:7044765206">704-476-5206</a>
+                </div>
+
+                <div class="contact-info-item">
+                  <strong>Work Email</strong>
+                  <a href="mailto:Jacob.appling@caromonthealth.org">Jacob.appling@caromonthealth.org</a>
+                </div>
+
+                <div class="contact-info-item">
+                  <strong>LinkedIn</strong>
+                  <a href="https://www.linkedin.com/in/jacob-appling-3192b119a" target="_blank">
+                    Jacob Appling on LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-card two-spacer">
+              <h3>Career Interests</h3>
+
+              <div class="interest-grid">
+                <div class="interest-pill">Healthcare Construction</div>
+                <div class="interest-pill">Commercial Construction</div>
+                <div class="interest-pill">BIM / VDC</div>
+                <div class="interest-pill">Public-Sector Construction</div>
+                <div class="interest-pill">School & Municipal Facilities</div>
+                <div class="interest-pill">Facilities Management</div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
